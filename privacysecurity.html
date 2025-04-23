@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy & Security</title>
+    <link rel="stylesheet" href="privacy&security/privacystyle.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">☰</button>
+            <div class="logo">
+                <!-- Image for the logo -->
+                <img src="privacy&security/images/privacy_logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="homepage.html" onclick="fetchNews('politics')">Politics</a>
+            <a href="homepage.html" onclick="fetchNews('business')">Business</a>
+            <a href="homepage.html" onclick="fetchNews('sports')">Sports</a>
+            <a href="homepage.html" onclick="fetchNews('entertainment')">Entertainment</a>
+            <a href="homepage.html" onclick="fetchNews('health')">Health</a>
+            <a href="homepage.html" onclick="fetchNews('technology')">Technology</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search">
+        </div>
+        <div class="user-profile">
+            <div class="bell-icon">
+                <!-- Image for notification icon -->
+                <img src="privacy&security/images/notification_icon.png" alt="Notification" width="25">
+            </div>
+            <div class="settings-icon">
+                <!-- Image for settings icon -->
+                <img src="privacy&security/images/settings_icon.png" alt="Settings" width="25">
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="peoplevoice.html">People's Voice</a></li>
+            <li><a href="submissions.html">Submissions</a></li>
+            <li><a href="bookmarks.html">Bookmarks</a></li>
+            <li><a href="editorialguidelines.html">Editorial Guidelines</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="privacysecurity.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section id="news-container">
+            <div class="article">
+                <!-- Image for the Privacy & Security banner -->
+                <img src="privacy&security/images/privacy_banner.jpg" alt="Privacy Banner" style="width: 100%; height: auto; margin-bottom: 20px;">
+                <h3>Privacy & Security</h3>
+                <p>Your privacy and security are of utmost importance to us. We take extensive measures to ensure the protection of your data.</p>
+                <p>Learn more about how we manage your information responsibly and transparently.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="privacy&security/privacyscript.js"></script>
+</body>
+</html>

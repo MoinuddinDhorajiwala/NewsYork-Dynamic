@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People's Voice</title>
+    <link rel="stylesheet" href="PeopleVoice/peoplevoicestyle.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">☰</button>
+            <div class="logo">
+                <img src="PeopleVoice/peoplevoice_logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="homepage.html" onclick="fetchNews('politics')">Politics</a>
+            <a href="homepage.html" onclick="fetchNews('business')">Business</a>
+            <a href="homepage.html" onclick="fetchNews('sports')">Sports</a>
+            <a href="homepage.html" onclick="fetchNews('entertainment')">Entertainment</a>
+            <a href="homepage.html" onclick="fetchNews('health')">Health</a>
+            <a href="homepage.html" onclick="fetchNews('technology')">Technology</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search" onkeypress="searchNews(event)">
+        </div>
+        <div class="user-profile">
+            <div class="bell-icon">
+                <img src="PeopleVoice/notification_icon.png" alt="Notification" width="25">
+            </div>
+            <div class="settings-icon">
+                <img src="PeopleVoice/settings_icon.png" alt="Settings" width="25">
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="peoplevoice.html">People's Voice</a></li>
+            <li><a href="submissions.html">Submissions</a></li>
+            <li><a href="bookmarks.html">Bookmarks</a></li>
+            <li><a href="editorialguidelines.html">Editorial Guidelines</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="privacysecurity.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section id="news-container">
+            <!-- Content specific to the People's Voice Page -->
+            <div class="article">
+                <img src="PeopleVoice/peoplevoice_banner.jpg" alt="People's Voice Banner" style="width: 100%; height: auto; margin-bottom: 20px;">
+                <h3>THIS IS PEOPLE'S VOICE PAGE</h3>
+                <p>This page allows users to share their thoughts and opinions on various topics.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="PeopleVoice/peoplevoicescript.js"></script>
+</body>
+</html>

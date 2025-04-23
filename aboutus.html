@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="Aboutus/aboutusstyle.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="toggle-sidebar">☰</button>
+            <div class="logo">
+                <!-- Logo image -->
+                <img src="Aboutus/images/aboutus_logo.jpg" alt="Logo" width="40">
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="#" onclick="fetchNews('politics')">Politics</a>
+            <a href="#" onclick="fetchNews('business')">Business</a>
+            <a href="#" onclick="fetchNews('sports')">Sports</a>
+            <a href="#" onclick="fetchNews('entertainment')">Entertainment</a>
+            <a href="#" onclick="fetchNews('health')">Health</a>
+            <a href="#" onclick="fetchNews('technology')">Technology</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search">
+        </div>
+        <div class="user-profile">
+            <div class="bell-icon">
+                <!-- Notification icon -->
+                <img src="Aboutus/images/notification_icon.png" alt="Notification" width="25">
+            </div>
+            <div class="settings-icon">
+                <!-- Settings icon -->
+                <img src="Aboutus/images/settings_icon.png" alt="Settings" width="25">
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="peoplevoice.html">People's Voice</a></li>
+            <li><a href="submissions.html">Submissions</a></li>
+            <li><a href="bookmarks.html">Bookmarks</a></li>
+            <li><a href="editorialguidelines.html">Editorial Guidelines</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="privacysecurity.html">Privacy & Security</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section id="about-container">
+            <div class="article">
+                <!-- Banner image for the About Us page -->
+                <img src="Aboutus/images/aboutus_banner.jpg" alt="About Us Banner" style="width: 100%; height: auto; margin-bottom: 20px;">
+                <h3>About Us</h3>
+                <p>Welcome to our platform! We are dedicated to providing quality content, engaging trivia, and a space for users to share their voices and ideas.</p>
+                <p>Our mission is to foster a community where knowledge, creativity, and collaboration thrive. Whether you're here to learn, share, or connect, we're glad to have you with us!</p>
+                <p>Feel free to explore our various sections and discover what makes our platform unique.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="Aboutus/aboutusscript.js"></script>
+</body>
+</html>
