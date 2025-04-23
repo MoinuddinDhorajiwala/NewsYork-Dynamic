@@ -1,0 +1,612 @@
+/* General page layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+.left-header {
+    display: flex;
+    align-items: center;
+}
+#toggle-sidebar {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.logo img {
+    margin-left: 10px;
+}
+.top-nav {
+    flex-grow: 1;
+    text-align: center;
+}
+.top-nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.top-nav a:hover {
+    text-decoration: underline;
+}
+.search-bar input {
+    padding: 5px;
+    width: 200px;
+}
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+.bell-icon, .settings-icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+}
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    height: 100vh;
+    position: fixed;
+    top: 40px;
+    left: -220px;
+    transition: left 0.3s ease;
+    padding-top: 20px;
+    z-index: 5;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+}
+.sidebar ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+.sidebar ul li a:hover {
+    background-color: #ddd;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 4;
+}
+/* Bookmarks Page Content Styles */
+main {
+    padding: 20px;
+}
+#news-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/* Update the news container to match homepage grid layout */
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Fixed size for articles */
+.article {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 300px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.article h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.article p {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Special case for empty bookmarks message */
+.article.empty-bookmarks {
+    width: 100%;
+    height: auto;
+    grid-column: 1 / -1;
+}
+.article {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: white;
+}
+
+.article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.article h3 {
+    margin: 10px 0;
+}
+
+.news-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.vote-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    padding: 20px;
+    background: #fee;
+    border-radius: 4px;
+}
+
+.news-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.news-options button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+}
+
+.news-options button:hover {
+    background-color: #ddd;
+}
+
+/* Add these styles to homepagestyle.css */
+
+/* Comments section */
+/* Comment Modal Styles */
+/* Comment Modal Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.comment-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.comment-modal-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.comments-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    max-height: 50vh;
+}
+
+.loading-comments, .no-comments, .error-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.comment-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.comment-username {
+    font-weight: bold;
+}
+
+.comment-time {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.comment-text {
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.report-comment {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 5px;
+}
+
+.report-comment:hover {
+    color: #ff4444;
+    text-decoration: underline;
+}
+
+.report-comment:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+.comment-form {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.comment-form textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+.submit-comment-btn {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-comment-btn:hover {
+    background-color: #0d62c7;
+}
+.bookmark {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.bookmark:hover {
+    color: #ffd700;
+}
+
+.remove-bookmark {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.remove-bookmark:hover {
+    background: #cc0000;
+}
+
+#login-prompt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Login prompt card */
+.login-prompt-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+}
+
+.login-prompt-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.login-prompt-card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login-prompt-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.login-prompt-buttons .login-btn,
+.login-prompt-buttons .signup-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.login-prompt-buttons .login-btn {
+    background-color: #007bff;
+}
+
+.login-prompt-buttons .signup-btn {
+    background-color: #28a745;
+}
+
+.login-prompt-buttons .login-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-prompt-buttons .signup-btn:hover {
+    background-color: #218838;
+}
+rch bar styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    background-color:transparent;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    background: transparent;
+    padding: 8px;
+    width: 200px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+}
+
+/* If you don't have a search icon image, you can use this CSS icon instead */
+.search-button::before {
+    content: "🔍";
+    font-size: 16px;
+}
+
+/* Hide the default icon if using the CSS icon */
+.search-button img {
+    display: none;
+}
+
+.news-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.news-options button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+
+.news-options button:hover {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+/* Add styles for bookmark button */
+.bookmark {
+    font-size: 1.5rem;
+}
+
+.bookmark:hover {
+    color: #ffd700;
+}
+
+/* Error message */
+.error-message {
+    color: #F44336;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFEBEE;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.no-results {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Style for bookmark-specific elements */
+.bookmark {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.remove-bookmark {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.remove-bookmark:hover {
+    background: #cc0000;
+}
+
+/* Style for empty bookmarks message */
+.article.empty-bookmarks {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.article.empty-bookmarks h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.article.empty-bookmarks p {
+    font-size: 1.1rem;
+    color: #666;
+}

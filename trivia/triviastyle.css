@@ -1,0 +1,322 @@
+/* Trivia Container Styles */
+.trivia-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trivia-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.trivia-header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 28px;
+}
+
+.points-display {
+    display: flex;
+    gap: 20px;
+}
+
+.weekly-points, .total-points {
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.weekly-points h3, .total-points h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.weekly-points p, .total-points p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Category Selection */
+.category-selection {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.category-selection h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.category-buttons button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.category-buttons button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.remaining-questions {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.category-buttons button:hover {
+    background-color: #2980b9;
+}
+
+/* Question Container */
+.hidden {
+    display: none;
+}
+
+#trivia-question-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#question-category {
+    margin-top: 0;
+    color: #555;
+    font-size: 18px;
+}
+
+.question-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#question-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.option-button {
+    padding: 12px 15px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.option-button:hover {
+    background-color: #e9e9e9;
+}
+
+.option-button.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.option-button.incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+#result-message {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.correct-message {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.incorrect-message {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#next-question {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 25px 0 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+#next-question:hover {
+    background-color: #218838;
+}
+
+/* Leaderboard Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+.leaderboard-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.leaderboard-tab {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+}
+
+.leaderboard-tab.active {
+    border-bottom: 3px solid #3498db;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.leaderboard-content {
+    display: none;
+}
+
+.leaderboard-content.active {
+    display: block;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+.leaderboard-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.rank-1 {
+    background-color: #fff9c4;
+}
+
+.rank-2 {
+    background-color: #f5f5f5;
+}
+
+.rank-3 {
+    background-color: #ffe0b2;
+}
+
+/* Trophy icon for leaderboard */
+.leaderboard-icon {
+    margin-left: 10px;
+}
+
+.leaderboard-icon button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.leaderboard-icon img {
+    width: 25px;
+    height: 25px;
+}
